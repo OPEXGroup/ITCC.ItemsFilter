@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BolapanControl.ItemsFilter.View.FilterViewBase&lt;T&gt;" Collapsed="true">
+    <Position X="1.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAIAABIAgAAAAAEAAAEAAAAAAAAAAkAAAAAAAg=</HashCode>
+      <FileName>View\FilterViewBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.View.ComparableFilterView" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABABAAAEAAACAAAAEAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>View\ComparableFilterView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.View.MultiValueFilterView" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQQAAIAABAAAAACAAAAgAAAAAAAAAAAAAAAwBAAAA=</HashCode>
+      <FileName>View\MultiValueFilterView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.View.RangeFilterView" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAABABAAAEAAgCAAAAAAAAAAAAAEgAAAAAAA=</HashCode>
+      <FileName>View\RangeFilterView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.View.StringFilterView" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAgBAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\StringFilterView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BolapanControl.ItemsFilter.View.IFilterView">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>View\IFilterView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

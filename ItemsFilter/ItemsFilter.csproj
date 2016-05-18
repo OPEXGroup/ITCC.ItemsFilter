@@ -1,55 +1,161 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>9e7ab90c-aced-4d55-87c3-237e7e08d64f</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{9E7AB90C-ACED-4D55-87C3-237E7E08D64F}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ItemsFilter</RootNamespace>
+    <RootNamespace>BolapanControl.ItemsFilter</RootNamespace>
     <AssemblyName>ItemsFilter</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>..\Bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Release\ItemsFilter.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ItemsFilter.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ColumnFilter.cs" />
+    <Compile Include="Design\MultivalueFilterModel.cs" />
+    <Compile Include="FilterCommand.cs" />
+    <Compile Include="FilterControl.cs" />
+    <Compile Include="FilterDataGrid.cs" />
+    <Compile Include="FilteredEventArgs.cs" />
+    <Compile Include="FilterEventArgs.cs" />
+    <Compile Include="FilterEventHandler.cs" />
+    <Compile Include="Initializer\EnumFilterInitializer.cs" />
+    <Compile Include="Initializer\PropertyFilterInitializer.cs" />
+    <Compile Include="Initializer\ValueFilterInitializer.cs" />
+    <Compile Include="Model\EnumFilter.cs" />
+    <Compile Include="Model\EqualFilter.cs" />
+    <Compile Include="Model\Filter.cs" />
+    <Compile Include="Model\FiltersCollection.cs" />
+    <Compile Include="Model\GreaterOrEqualFilter.cs" />
+    <Compile Include="Model\IComparableFilter.cs" />
+    <Compile Include="Model\IFilter.cs" />
+    <Compile Include="Model\IMultivalueFilter.cs" />
+    <Compile Include="Model\IPropertyFilter.cs" />
+    <Compile Include="Model\IRangeFilter.cs" />
+    <Compile Include="Model\IStringFilter.cs" />
+    <Compile Include="Model\LessOrEqualFilter.cs" />
+    <Compile Include="Model\PropertyFilter.cs" />
+    <Compile Include="Model\RangeFilter.cs" />
+    <Compile Include="Model\StringFilter.cs" />
+    <Compile Include="Model\StringFilterMode.cs" />
+    <Compile Include="Initializer\EqualFilterInitializer.cs" />
+    <Compile Include="Initializer\FilterInitializer.cs" />
+    <Compile Include="Initializer\FilterInitializersManager.cs" />
+    <Compile Include="Initializer\GreaterOrEqualFilterInitializer.cs" />
+    <Compile Include="Initializer\LessOrEqualFilterInitializer.cs" />
+    <Compile Include="Initializer\RangeFilterInitializer.cs" />
+    <Compile Include="Initializer\StringFilterInitializer.cs" />
+    <Compile Include="FilterPresenter.cs" />
+    <Compile Include="Model\ViewAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ViewModel\FilterControlVm.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="View\ComparableFilterView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Converters\FilterControlVmToVisibilityConverter.cs" />
+    <Compile Include="View\ModelViewAttribute.cs" />
+    <Compile Include="View\FilterViewBase.cs" />
+    <Compile Include="View\IFilterView.cs" />
+    <Compile Include="View\MultiValueFilterView.cs" />
+    <Compile Include="View\RangeFilterView.cs" />
+    <Compile Include="View\Converters\SimplePropertyConverter.cs" />
+    <Compile Include="View\StringFilterView.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
+    <None Include="Initializer\Initializers.cd" />
+    <None Include="Model\Filters.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="View\Views.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ItemsFilter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Themes\ItemsFilterStyle.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -57,5 +163,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

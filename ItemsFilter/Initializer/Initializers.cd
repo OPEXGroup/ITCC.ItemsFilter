@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BolapanControl.ItemsFilter.Initializer.FilterInitializer" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\FilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.PropertyFilterInitializer" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\PropertyFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.ValueFilterInitializer" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\ValueFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.EnumFilterInitializer" Collapsed="true">
+    <Position X="2" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\EnumFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.EqualFilterInitializer" Collapsed="true">
+    <Position X="2" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAIAA=</HashCode>
+      <FileName>Initializer\EqualFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.LessOrEqualFilterInitializer" Collapsed="true">
+    <Position X="2" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAA=</HashCode>
+      <FileName>Initializer\LessOrEqualFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.RangeFilterInitializer" Collapsed="true">
+    <Position X="2" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAA=</HashCode>
+      <FileName>Initializer\RangeFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Initializer.StringFilterInitializer" Collapsed="true">
+    <Position X="2" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\StringFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

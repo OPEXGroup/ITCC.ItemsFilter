@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BolapanControl.ItemsFilter.Model.Filter" Collapsed="true">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAACAAAAAAIAEAAgARQAoIgUAABAAAAAAgAAAAI=</HashCode>
+      <FileName>Model\Filter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Model.PropertyFilter" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PropertyFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Model.LessOrEqualFilter&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAAQAAAAAAACgAEAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\LessOrEqualFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Model.RangeFilter&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAAQAAAAQEACAAEABAABAAAAAAAgAAAA=</HashCode>
+      <FileName>Model\RangeFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Model.StringFilter" Collapsed="true">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAAAIAAAAAAAAAAACCAAAAAAABAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\StringFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BolapanControl.ItemsFilter.Model.GreaterOrEqualFilter&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GreateOrEqualFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IFilter" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IMultiValueFilter" Collapsed="true">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IMultivalueFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IPropertyFilter" Collapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IPropertyFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IStringFilter" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\IStringFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IRangeFilter" Collapsed="true">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IRangeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IComparableFilter" Collapsed="true">
+    <Position X="10.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IComparableFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IComparableFilter&lt;T&gt;" Collapsed="true">
+    <Position X="10.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IComparableFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BolapanControl.ItemsFilter.Model.IRangeFilter&lt;T&gt;" Collapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IRangeFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
