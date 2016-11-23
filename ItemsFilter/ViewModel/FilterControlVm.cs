@@ -42,6 +42,7 @@ namespace BolapanControl.ItemsFilter.ViewModel
         }
 
         private readonly object lockFlag = new object();
+        private readonly object stateLock = new object();
         private bool isActive;
         private bool isEnable;
         private bool isOpen;
@@ -64,9 +65,10 @@ namespace BolapanControl.ItemsFilter.ViewModel
                     state = value;
                     if (StateChanged != null)
                     {
-                        lock (StateChanged)
+                        lock (stateLock)
                         {
-                            StateChanged(this, state);
+                            var stateChangedEvent = StateChanged;
+                            stateChangedEvent(this, state);
                         }
                     }
                     ;

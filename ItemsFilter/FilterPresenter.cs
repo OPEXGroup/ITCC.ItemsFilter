@@ -269,8 +269,9 @@ namespace BolapanControl.ItemsFilter
         {
             if (_Filter != null)
             {
+                var filterEvent = _Filter;
                 var args = new FilterEventArgs(obj);
-                _Filter(this, args);
+                filterEvent(this, args);
                 return args.Accepted;
             }
             return true;
