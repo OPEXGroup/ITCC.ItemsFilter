@@ -63,11 +63,11 @@ namespace BolapanControl.ItemsFilter.ViewModel
                 if (state != value)
                 {
                     state = value;
-                    if (StateChanged != null)
+                    var stateChangedEvent = StateChanged;
+                    if (stateChangedEvent != null)
                     {
                         lock (stateLock)
                         {
-                            var stateChangedEvent = StateChanged;
                             stateChangedEvent(this, state);
                         }
                     }

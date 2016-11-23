@@ -260,16 +260,15 @@ namespace BolapanControl.ItemsFilter
         {
             lock (filteredEventArgs)
             {
-                if (Filtered != null)
-                    Filtered(this, filteredEventArgs);
+                Filtered?.Invoke(this, filteredEventArgs);
             }
         }
 
         private bool FilterFunction(object obj)
         {
-            if (_Filter != null)
+            var filterEvent = _Filter;
+            if (filterEvent != null)
             {
-                var filterEvent = _Filter;
                 var args = new FilterEventArgs(obj);
                 filterEvent(this, args);
                 return args.Accepted;
