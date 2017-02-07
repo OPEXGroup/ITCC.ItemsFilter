@@ -84,7 +84,7 @@ namespace BolapanControl.ItemsFilter
                         return null;
                     }
                     IEnumerable<FilterInitializer> initializers = GetInitializers(column) ?? FilterInitializersManager;
-                    var key = Key ?? GetColumnKey(column);
+                    var key = GetColumnKey(column);
                     vm = filterPresenter.TryGetFilterControlVm(key, initializers);
                 }
                 else
