@@ -147,6 +147,8 @@
     </Compile>
     <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Utils\EnumDescriptionTypeConverter.cs" />
+    <Compile Include="Utils\LocalizedDescriptionAttribute.cs" />
     <Compile Include="ViewModel\FilterControlVm.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\ComparableFilterView.cs">
