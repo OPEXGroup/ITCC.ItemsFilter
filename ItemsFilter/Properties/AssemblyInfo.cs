@@ -9,12 +9,14 @@ using System.Windows.Markup;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("ItemsFilter")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: Guid("958e5e4e-b421-449c-af2d-fd5ba246eecc")]
+[assembly: AssemblyTitle("ITCC.ItemsFilter")]
 [assembly: AssemblyDescription("WPF ItemsFilter Extension for any ItemsControl, such as DataGrid.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Bolapansoft")]
-[assembly: AssemblyProduct("ItemsFilter")]
-[assembly: AssemblyCopyright("Copyright ©2013,2015 Bolapansoft")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ITCC.ItemsFilter")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,7 +53,7 @@ using System.Windows.Markup;
     XmlnsDefinition("http://schemas.bolapansoft.com/xaml/Controls/ItemsFilter", "BolapanControl.ItemsFilter.ViewModel")]
 [assembly:
     XmlnsDefinition("http://schemas.bolapansoft.com/xaml/Controls/ItemsFilter", "BolapanControl.ItemsFilter.Initializer"
-        )]
+    )]
 [assembly:
     XmlnsDefinition("http://schemas.bolapansoft.com/xaml/Controls/ItemsFilter", "BolapanControl.ItemsFilter.Model")]
 //[assembly: XmlnsDefinition("http://schemas.bolapansoft.com/xaml/Controls/ItemsFilter", "BolapanControl.ItemsFilter.Presentation")]
