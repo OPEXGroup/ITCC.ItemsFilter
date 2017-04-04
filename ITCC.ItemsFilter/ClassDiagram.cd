@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="ITCC.ItemsFilter.FilterPresenter">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Internal" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="ITCC.ItemsFilter.FilterPresenter.DisposeItemsDeferRefresh">
+        <TypeIdentifier>
+          <NewMemberFileName>FilterPresenter.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAABqABCAKgAACAgAgAAACAABEAAAABAAABAEBCAAA=</HashCode>
+      <FileName>FilterPresenter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CollectionView" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="filters" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.Filter">
+    <Position X="7.75" Y="0.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Internal" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAGAAACAAAAAAIAEAAgARQAoIgUAABAAAAAAgAAAAI=</HashCode>
+      <FileName>Model\Filter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.PropertyFilter">
+    <Position X="7.75" Y="3.75" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PropertyFilter.cs</FileName>
+      <NewMemberFileName>Model\Filter.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.EqualFilter&lt;T&gt;">
+    <Position X="11" Y="8.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAKAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\EqualFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.LessOrEqualFilter&lt;T&gt;">
+    <Position X="6.25" Y="6" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAAQAAAAAAACgAEAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\LessOrEqualFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.RangeFilter&lt;T&gt;">
+    <Position X="4.25" Y="6" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAAQAAAAQEACAAEABAABAAAAAAAgAAAA=</HashCode>
+      <FileName>Model\RangeFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.StringFilter">
+    <Position X="9" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABACAAAAAIAAAAAAAAAAACCAAAAAAABAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\StringFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.FiltersCollection">
+    <Position X="5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAABACIAABAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\FiltersCollection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Filters" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.ViewModel.FilterControlVm">
+    <Position X="0.5" Y="6" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Internal" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAAABAACAABQAAEAEAABBAQBAAAAAEAAAABGAAACA=</HashCode>
+      <FileName>ViewModel\FilterControlVm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.EqualFilter">
+    <Position X="11" Y="6.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Protected" Collapsed="true" />
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAYACAAAAAAAAAAAAAAAAAAAAAACAABAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\EqualFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.GreaterOrEqualFilter&lt;T&gt;">
+    <Position X="6.25" Y="8.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GreaterOrEqualFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.FilterInitializersManager" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\FilterInitializersManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.FilterInitializer" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\FilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.PropertyFilterInitializer" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\PropertyFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.ValueFilterInitializer" Collapsed="true">
+    <Position X="15.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\ValueFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.EnumFilterInitializer" Collapsed="true">
+    <Position X="14" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\EnumFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.EqualFilterInitializer" Collapsed="true">
+    <Position X="14" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAQAAAIAA=</HashCode>
+      <FileName>Initializer\EqualFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.LessOrEqualFilterInitializer" Collapsed="true">
+    <Position X="14" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAA=</HashCode>
+      <FileName>Initializer\LessOrEqualFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.RangeFilterInitializer" Collapsed="true">
+    <Position X="14" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAA=</HashCode>
+      <FileName>Initializer\RangeFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Initializer.StringFilterInitializer" Collapsed="true">
+    <Position X="14" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Initializer\StringFilterInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITCC.ItemsFilter.Model.EnumFilter&lt;T&gt;" Collapsed="true">
+    <Position X="11" Y="12" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\EnumFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="System.ComponentModel.ICollectionView" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

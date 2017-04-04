@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>VladimirTyrin,VladislavPrishchepa</authors>
+    <owners>VladimirTyrin,VladislavPrishchepa</owners>
+    <projectUrl>https://github.com/OPEXGroup/ITCC.ItemsFilter</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright (c) 2016-2017, Vladimir Tyrin, Vladislav Prishchepa</copyright>
+    <tags>WPF DataGrid FilterControl</tags>
+    <frameworkAssemblies>
+    	<frameworkAssembly assemblyName="PresentationFramework.Aero"  />
+	</frameworkAssemblies>
+  </metadata>
+</package>

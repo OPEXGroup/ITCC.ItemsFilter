@@ -1,0 +1,1011 @@
+﻿<!--
+// ****************************************************************************
+// <author>mishkin Ivan</author>
+// <email>Mishkin_Ivan@mail.ru</email>
+// <date>28.01.2015</date>
+// <project>ItemsFilter</project>
+// <license> GNU General Public License version 3 (GPLv3) </license>
+// ****************************************************************************
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                    xmlns:converters="clr-namespace:ITCC.ItemsFilter.View.Converters"
+                    xmlns:bsFilter="clr-namespace:ITCC.ItemsFilter"
+                    xmlns:vw="clr-namespace:ITCC.ItemsFilter.View"
+                    mc:Ignorable="d">
+    <converters:FilterControlVmToVisibilityConverter x:Key="FilterControlVmToVisibilityConverter" />
+    <converters:SimplePropertyConverter x:Key="SimplePropertyConverter" />
+    <!--  Control colors.  -->
+    <Color x:Key="DisabledControlLightColor">#FFE8EDF9</Color>
+    <!--    -->
+    <Color x:Key="DisabledControlDarkColor">#FFC5CBF9</Color>
+    <!--    -->
+    <Color x:Key="EnabledColorLightColor">#FFF8FAFD</Color>
+    <Color x:Key="EnabledControlDarkColor">#FF4C607A</Color>
+    <Color x:Key="ControlLightColor">White</Color>
+    <Color x:Key="ControlMediumColor">#FF7381F9</Color>
+
+    <LinearGradientBrush x:Key="FilterBackground" StartPoint="0.5,1" EndPoint="0.5,0">
+        <GradientStop Color="#FFFEFEFE" />
+        <GradientStop Offset="1" Color="#FFD1D1F1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="FilterPressedPenColor" Color="#FF3B329C" />
+    <SolidColorBrush x:Key="FilterPenColor" Color="#FF7070DC" />
+    <SolidColorBrush x:Key="FilterHeaderForegroundBrush" Color="#FF2F3AC1" />
+
+    <DrawingImage x:Key="DownArrowImage">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Brush>
+                    <SolidColorBrush Color="{StaticResource EnabledControlDarkColor}" />
+                </GeometryDrawing.Brush>
+                <GeometryDrawing.Geometry>
+                    <Geometry>M 0,0 L 3.5,4 L 7,0 Z</Geometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="DownArrowDisableImage">
+        <DrawingImage.Drawing>
+            <GeometryDrawing>
+                <GeometryDrawing.Brush>
+                    <SolidColorBrush Color="{StaticResource DisabledControlLightColor}" />
+                </GeometryDrawing.Brush>
+                <GeometryDrawing.Geometry>
+                    <Geometry>M 0,0 L 3.5,4 L 7,0 Z</Geometry>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <GeometryDrawing x:Key="DownArrowDrawing">
+        <GeometryDrawing.Brush>
+            <SolidColorBrush Color="{StaticResource EnabledControlDarkColor}" />
+        </GeometryDrawing.Brush>
+        <GeometryDrawing.Geometry>
+            <Geometry>M 0,0 L 3.5,4 L 7,0 Z</Geometry>
+        </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+    <DrawingImage x:Key="FilterActiveImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource FilterPenColor}" Geometry="F1 M 6,15L 6,11">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#FF7070DC"
+                             EndLineCap="Square"
+                             LineJoin="Bevel"
+                             StartLineCap="Square"
+                             Thickness="2" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,7L 6,11L 10,7">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="{StaticResource FilterPenColor}" Geometry="F1 M 2,5L 6,9L 10,5">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="FilterOpenPressedImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Geometry="F1 M 6,15L 6,11">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPressedPenColor}"
+                             EndLineCap="Square"
+                             LineJoin="Bevel"
+                             StartLineCap="Square"
+                             Thickness="2" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,7L 6,11L 10,7">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPressedPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,5L 6,9L 10,5">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPressedPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="FilterOpenImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource FilterPenColor}" Geometry="F1 M 6,15L 6,11">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Square"
+                             LineJoin="Bevel"
+                             StartLineCap="Square"
+                             Thickness="2" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,7L 6,11L 10,7">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,5L 6,9L 10,5">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="ClearImage">
+        <DrawingImage.Drawing>
+
+            <GeometryDrawing Brush="{StaticResource FilterHeaderForegroundBrush}"
+                             Geometry="M 1,2C 3.33333,3.33333 5.66667,4.66667 7.66667,6.66667C 9.66667,8.66666 11.3333,11.3333 12.1667,12.6667L 13,14M 1,15C 3,12 5,9 7.33333,6.66667C 9.66667,4.33333 12.3333,2.66667 13.6667,1.83333L 15,1" />
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+
+    <DrawingBrush x:Key="FilterButtonDisable" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Geometry="M 0,0 L 3.5,4 L 7,0 Z">
+                    <GeometryDrawing.Brush>
+                        <SolidColorBrush Color="{StaticResource DisabledControlLightColor}" />
+                    </GeometryDrawing.Brush>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+        <!--    -->
+    </DrawingBrush>
+    <DrawingBrush x:Key="FilterButtonEnable" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Geometry="M 0,0 L 3.5,4 L 7,0 Z">
+                    <GeometryDrawing.Brush>
+                        <SolidColorBrush Color="{StaticResource EnabledControlDarkColor}" />
+                    </GeometryDrawing.Brush>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="FilterButtonActive" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource FilterPenColor}" Geometry="F1 M 6,15L 6,11">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="#FF7070DC"
+                             EndLineCap="Square"
+                             LineJoin="Bevel"
+                             StartLineCap="Square"
+                             Thickness="2" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,7L 6,11L 10,7">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Brush="{StaticResource FilterPenColor}" Geometry="F1 M 2,5L 6,9L 10,5">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="FilterButtonOpenPressed" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Geometry="F1 M 6,15L 6,11">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPressedPenColor}"
+                             EndLineCap="Square"
+                             LineJoin="Bevel"
+                             StartLineCap="Square"
+                             Thickness="2" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,7L 6,11L 10,7">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPressedPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,5L 6,9L 10,5">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPressedPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="FilterButtonOpen" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource FilterPenColor}" Geometry="F1 M 6,15L 6,11">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Square"
+                             LineJoin="Bevel"
+                             StartLineCap="Square"
+                             Thickness="2" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,7L 6,11L 10,7">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <GeometryDrawing Geometry="F1 M 2,5L 6,9L 10,5">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{StaticResource FilterPenColor}"
+                             EndLineCap="Round"
+                             LineJoin="Round"
+                             StartLineCap="Round" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="Clear" Stretch="None">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{StaticResource FilterHeaderForegroundBrush}"
+                                 Geometry="M 1,2C 3.33333,3.33333 5.66667,4.66667 7.66667,6.66667C 9.66667,8.66666 11.3333,11.3333 12.1667,12.6667L 13,14M 1,15C 3,12 5,9 7.33333,6.66667C 9.66667,4.33333 12.3333,2.66667 13.6667,1.83333L 15,1" />
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <!--  <SolidColorBrush x:Key="FilterItemBackground" Color="#FFEAEAF5" />  -->
+
+    <!--  border style  -->
+    <Style x:Key="BorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#FF9D5C5C" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="MinWidth" Value="150" />
+        <Setter Property="Background" Value="{StaticResource FilterBackground}" />
+    </Style>
+
+    <!--  Text block style for displaying the filter type  -->
+    <Style x:Key="FilterNameStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="{StaticResource FilterHeaderForegroundBrush}" />
+        <Setter Property="Text" Value="Filter" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="2" />
+    </Style>
+    <!--  <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070" />  -->
+    <Style x:Key="ColumnHeaderButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <theme:DataGridHeaderBorder x:Name="Chrome"
+                                                Background="{TemplateBinding Background}"
+                                                BorderThickness="1,0,0,1"
+                                                IsHovered="{TemplateBinding IsMouseOver}"
+                                                IsPressed="{TemplateBinding IsPressed}"
+                                                Padding="{TemplateBinding Padding}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Content="{TemplateBinding Content}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </theme:DataGridHeaderBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{x:Null}" />
+    </Style>
+    <Style x:Key="FilterClearButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border x:Name="border"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Background="#00000000"
+                            BorderThickness="1,0,0,1"
+                            Padding="2">
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border"
+                                                                       Storyboard.TargetProperty="(Border.BorderBrush)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterHeaderForegroundBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border"
+                                                                       Storyboard.TargetProperty="(Border.BorderBrush)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterHeaderForegroundBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="path"
+                                                                       Storyboard.TargetProperty="(Shape.Stroke)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterHeaderForegroundBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="path"
+                                                                       Storyboard.TargetProperty="(Shape.Fill)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Null}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Path x:Name="path"
+                              Data="M 1,2C 3.33333,3.33333 5.66667,4.66667 7.66667,6.66667C 9.66667,8.66666 11.3333,11.3333 12.1667,12.6667L 13,14M 1,15C 3,12 5,9 7.33333,6.66667C 9.66667,4.33333 12.3333,2.66667 13.6667,1.83333L 15,1"
+                              Fill="{DynamicResource FilterPressedPenColor}"
+                              StrokeEndLineCap="Round"
+                              StrokeStartLineCap="Round" />
+
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <!--  Command="bsFilter:FilterCommand.Clear"  -->
+        <Setter Property="Command" Value="{x:Static bsFilter:FilterCommand.Clear}" />
+        <!--  ToolTip="Clear filter"  -->
+        <Setter Property="ToolTip" Value="Clear filter" />
+    </Style>
+    <!--  String Value Filter  -->
+    <Style TargetType="{x:Type vw:StringFilterView}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type vw:StringFilterView}">
+                    <Border Height="Auto"
+                            Margin="{TemplateBinding Margin}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                            Style="{StaticResource BorderStyle}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="PART_Name"
+                                       Grid.Column="0"
+                                       Style="{StaticResource FilterNameStyle}" />
+
+
+                            <TextBlock Grid.Row="1" 
+                                       Grid.Column="0"
+                                       Margin="1"
+                                       HorizontalAlignment="Right"
+                                       Text="Search Type:"
+                                       TextWrapping="NoWrap" />
+
+                            <TextBlock Grid.Row="2" 
+                                       Grid.Column="0"
+                                       Margin="1"
+                                       HorizontalAlignment="Right"
+                                       Text="Find:"
+                                       TextWrapping="Wrap" />
+
+                            <TextBox x:Name="PART_Input"
+                                     Grid.Row="2"
+                                     Grid.Column="1"
+                                     Grid.ColumnSpan="2"
+                                     Margin="1"
+                                     Padding="1,1,1,1"
+                                     Text="{Binding Model.Value,
+                                                    Mode=TwoWay,
+                                                    UpdateSourceTrigger=PropertyChanged,
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
+                                     TextWrapping="NoWrap" />
+
+                            <ComboBox x:Name="PART_FilterType"
+                                      Grid.Row="1"
+                                      Grid.Column="1"
+                                      Grid.ColumnSpan="2"
+                                      Margin="2"
+                                      HorizontalAlignment="Stretch"
+                                      Padding="1,1,1,1"
+                                      SelectedValue="{Binding Model.Mode,
+                                                              RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource FilterClearButtonStyle}" />
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Filters View  -->
+    <Style TargetType="{x:Type vw:RangeFilterView}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type vw:RangeFilterView}">
+                    <Border Height="Auto"
+                            Margin="{TemplateBinding Margin}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                            Style="{StaticResource BorderStyle}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="PART_Name"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       Style="{StaticResource FilterNameStyle}" />
+
+                            <TextBlock Grid.Row="1" 
+                                       Grid.Column="0"
+                                       Margin="1,1,1,1"
+                                       HorizontalAlignment="Left"
+                                       Padding="1,1,1,1"
+                                       Text="From:"
+                                       TextAlignment="Left"
+                                       TextWrapping="NoWrap" />
+
+                            <TextBox x:Name="PART_From"
+                                     Grid.Row="1"
+                                     Grid.Column="1"
+                                     Grid.ColumnSpan="2"
+                                     Margin="1,1,1,1"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Center"
+                                     Padding="1,1,1,1"
+                                     Text="{Binding Model.CompareFrom,
+                                                    Converter={StaticResource SimplePropertyConverter},
+                                                    UpdateSourceTrigger=Explicit,
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
+                                     TextWrapping="NoWrap" />
+
+                            <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       Margin="1,1,1,1"
+                                       Padding="1,1,1,1"
+                                       Text="To :"
+                                       TextWrapping="Wrap" />
+
+                            <TextBox x:Name="PART_To"
+                                     Grid.Row="2"
+                                     Grid.Column="1"
+                                     Grid.ColumnSpan="2"
+                                     Margin="1,1,1,1"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Center"
+                                     Padding="1,1,1,1"
+                                     Text="{Binding Model.CompareTo,
+                                                    Converter={StaticResource SimplePropertyConverter},
+                                                    UpdateSourceTrigger=Explicit,
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
+                                     TextWrapping="NoWrap" />
+                            <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource FilterClearButtonStyle}" />
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Compare Value Filter  -->
+    <Style TargetType="{x:Type vw:ComparableFilterView}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type vw:ComparableFilterView}">
+                    <Border Height="Auto"
+                            Margin="{TemplateBinding Margin}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                            Style="{StaticResource BorderStyle}">
+                        <Grid HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="PART_Name"
+                                       Grid.Column="0"
+                                       Style="{StaticResource FilterNameStyle}"
+                                       Text="{Binding Model.Name,
+                                                      Mode=OneWay,
+                                                      RelativeSource={RelativeSource TemplatedParent}}" />
+
+                            <TextBox x:Name="PART_Input"
+                                     Grid.Row="1"
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="2"
+                                     Margin="2"
+                                     HorizontalAlignment="Stretch"
+                                     VerticalAlignment="Center"
+                                     Padding="1,1,1,1"
+                                     Text="{Binding Model.CompareTo,
+                                                    UpdateSourceTrigger=Explicit,
+                                                    Converter={StaticResource SimplePropertyConverter},
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
+                                     TextWrapping="NoWrap" />
+                            <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource FilterClearButtonStyle}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MultivalueFilterItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="HorizontalContentAlignment"
+                Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" />
+        <Setter Property="Background"
+                Value="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" />
+        <Setter Property="Padding" Value="2,0,0,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <CheckBox x:Name="Bd"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              IsChecked="{Binding IsSelected,
+                                                  Mode=TwoWay,
+                                                  RelativeSource={RelativeSource TemplatedParent}}">
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          ContentStringFormat="G"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </CheckBox>
+
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true" />
+                                <Condition Property="Selector.IsSelectionActive" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Bd" Property="Background"
+                                    Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="Width" Value="8" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Cursor" Value="SizeWE" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="MultiValueFilterViewTemplate" TargetType="{x:Type vw:MultiValueFilterView}">
+        <Border MaxHeight="150"
+                Margin="{TemplateBinding Margin}"
+                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                Style="{StaticResource BorderStyle}"
+                d:DesignHeight="150"
+                d:DesignWidth="250">
+            <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListBox x:Name="PART_Items"
+                         Grid.Row="1"
+                         Grid.ColumnSpan="2"
+                         Width="Auto"
+                         Height="Auto"
+                         Background="{StaticResource FilterBackground}"
+                         ItemContainerStyle="{StaticResource MultivalueFilterItemStyle}"
+                         ItemsSource="{Binding Model.AvailableValues,
+                                               RelativeSource={RelativeSource TemplatedParent}}"
+                         SelectedValuePath="{x:Null}"
+                         SelectionMode="Multiple"
+                         SnapsToDevicePixels="False"
+                         VirtualizingStackPanel.VirtualizationMode="Recycling" />
+
+                <TextBlock x:Name="PART_Name"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Style="{StaticResource FilterNameStyle}"
+                           Text="{Binding Model.Name,
+                                          RelativeSource={RelativeSource TemplatedParent}}" />
+                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource FilterClearButtonStyle}" />
+
+
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <!--  Multi Value Filter  -->
+    <Style TargetType="{x:Type vw:MultiValueFilterView}">
+        <Setter Property="Template" Value="{StaticResource MultiValueFilterViewTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="FilterControlTemplate" TargetType="{x:Type bsFilter:FilterControl}">
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Padding="{TemplateBinding Padding}"
+                SnapsToDevicePixels="True"
+                d:DesignHeight="89">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ItemsPresenter Grid.Row="1" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type bsFilter:FilterControl}">
+        <Setter Property="Template" Value="{StaticResource FilterControlTemplate}" />
+    </Style>
+    <Style TargetType="{x:Type bsFilter:ColumnFilter}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type bsFilter:ColumnFilter}">
+                    <Grid Width="Auto"
+                          Height="{TemplateBinding Height}"
+                          Margin="{TemplateBinding Margin}"
+                          Visibility="{TemplateBinding Model,
+                                                       Converter={StaticResource FilterControlVmToVisibilityConverter}}"
+                          d:DesignHeight="106"
+                          d:DesignWidth="107">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="FilterState">
+                                <VisualState x:Name="Active">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Icon"
+                                                                       Storyboard.TargetProperty="(Rectangle.Fill)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterButtonActive}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Open">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Icon"
+                                                                       Storyboard.TargetProperty="(Rectangle.Fill)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterButtonOpen}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disable" />
+                                <VisualState x:Name="Enable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Icon"
+                                                                       Storyboard.TargetProperty="(Rectangle.Fill)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterButtonEnable}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="OpenActive">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Icon"
+                                                                       Storyboard.TargetProperty="(Rectangle.Fill)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource FilterButtonActive}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+
+                        <Button x:Name="button"
+                                HorizontalAlignment="Right"
+                                Command="bsFilter:FilterCommand.Show"
+                                Padding="2"
+                                Style="{StaticResource ColumnHeaderButtonStyle}">
+
+                            <Rectangle x:Name="Icon"
+                                       Width="10"
+                                       Height="16"
+                                       Fill="{StaticResource FilterButtonEnable}" />
+                        </Button>
+                        <Popup x:Name="PART_FilterView"
+                               Grid.Row="1"
+                               Width="{Binding ActualWidth,
+                                               Mode=OneWay,
+                                               RelativeSource={RelativeSource FindAncestor,
+                                                                              AncestorType={x:Type DataGridColumnHeader}}}"
+                               MinWidth="180"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               IsOpen="{Binding Model.IsOpen,
+                                                RelativeSource={RelativeSource TemplatedParent}}"
+                               Placement="Bottom"
+                               PopupAnimation="Scroll"
+                               StaysOpen="False">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <Grid>
+                                    <ItemsPresenter Grid.Row="1"
+                                                    Margin="{TemplateBinding Padding}"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Grid>
+
+                            </Border>
+                        </Popup>
+                    </Grid>
+
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <theme:DataGridHeaderBorder Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                IsClickable="{TemplateBinding CanUserSort}"
+                                                IsHovered="{TemplateBinding IsMouseOver}"
+                                                IsPressed="{TemplateBinding IsPressed}"
+                                                Padding="{TemplateBinding Padding}"
+                                                SeparatorBrush="{TemplateBinding SeparatorBrush}"
+                                                SeparatorVisibility="{TemplateBinding SeparatorVisibility}"
+                                                SortDirection="{TemplateBinding SortDirection}"
+                                                d:DesignHeight="30"
+                                                d:DesignWidth="150">
+                        <Grid Margin="-5,-4">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Margin="5,4,5,4"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <bsFilter:ColumnFilter Grid.Row="0"
+                                                   Grid.Column="1"
+                                                   HorizontalAlignment="Right"
+                                                   VerticalAlignment="Center"
+                                                   Background="Transparent"
+                                                   ParentCollection="{Binding ItemsSource,
+                                                                              RelativeSource={RelativeSource FindAncestor,
+                                                                                                             AncestorType={x:Type DataGrid}}}" />
+                            <Thumb x:Name="PART_LeftHeaderGripper"
+                                   Grid.Column="0" 
+                                   HorizontalAlignment="Left"
+                                   Style="{StaticResource ColumnHeaderGripperStyle}" />
+                            <Thumb x:Name="PART_RightHeaderGripper"
+                                   Grid.Column="1"
+                                   Width="4"
+                                   HorizontalAlignment="Right"
+                                   Style="{StaticResource ColumnHeaderGripperStyle}" />
+
+                        </Grid>
+                    </theme:DataGridHeaderBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="DisplayIndex" Value="0">
+                            <Setter TargetName="PART_LeftHeaderGripper" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Padding" Value="-2,0" />
+
+    </Style>
+    <Style TargetType="{x:Type bsFilter:FilterDataGrid}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="BorderBrush" Value="#FF688CAF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridColumnHeaderStyle}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGrid}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer Name="DG_ScrollViewer" Focusable="false">
+                            <ScrollViewer.Template>
+                                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button
+                                            Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}},
+                                                                Path=CellsPanelHorizontalOffset}"
+                                            Command="{x:Static DataGrid.SelectAllCommand}"
+                                            Focusable="false"
+                                            Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type DataGrid},
+                                                                                              ResourceId=DataGridSelectAllButtonStyle}}"
+                                            Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}},
+                                                                     Path=HeadersVisibility,
+                                                                     Converter={x:Static DataGrid.HeadersVisibilityConverter},
+                                                                     ConverterParameter={x:Static DataGridHeadersVisibility.All}}" />
+                                        <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter"
+                                                                        Grid.Row="0"
+                                                                        Grid.Column="1"
+                                                                        Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}},
+                                                                                             Path=HeadersVisibility,
+                                                                                             Converter={x:Static DataGrid.HeadersVisibilityConverter},
+                                                                                             ConverterParameter={x:Static DataGridHeadersVisibility.Column}}" />
+
+                                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                                Grid.Row="1"
+                                                                Grid.Column="0"
+                                                                Grid.ColumnSpan="2" 
+                                                                CanContentScroll="{TemplateBinding CanContentScroll}" />
+
+                                        <ScrollBar Name="PART_VerticalScrollBar"
+                                                   Grid.Row="1"
+                                                   Grid.Column="2"
+                                                   Maximum="{TemplateBinding ScrollableHeight}"
+                                                   Orientation="Vertical"
+                                                   ViewportSize="{TemplateBinding ViewportHeight}"
+                                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                                   Value="{Binding Path=VerticalOffset,
+                                                                   RelativeSource={RelativeSource TemplatedParent},
+                                                                   Mode=OneWay}" />
+
+                                        <Grid Grid.Row="2" Grid.Column="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition
+                                                    Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=NonFrozenColumnsViewportHorizontalOffset}" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <ScrollBar Name="PART_HorizontalScrollBar"
+                                                       Grid.Column="1"
+                                                       Maximum="{TemplateBinding ScrollableWidth}"
+                                                       Orientation="Horizontal"
+                                                       ViewportSize="{TemplateBinding ViewportWidth}"
+                                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                                       Value="{Binding Path=HorizontalOffset,
+                                                                       RelativeSource={RelativeSource TemplatedParent},
+                                                                       Mode=OneWay}" />
+
+                                        </Grid>
+                                    </Grid>
+                                </ControlTemplate>
+                            </ScrollViewer.Template>
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsGrouping" Value="true">
+                <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
