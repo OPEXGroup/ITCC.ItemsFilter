@@ -167,6 +167,7 @@
     </EmbeddedResource>
     <None Include="ClassDiagram.cd" />
     <None Include="Initializer\Initializers.cd" />
+    <None Include="ITCC.ItemsFilter.nuspec" />
     <None Include="Model\Filters.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
